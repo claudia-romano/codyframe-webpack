@@ -1,0 +1,33 @@
+{
+  "name": "codyframe-webpack",
+  "version": "1.0.0",
+  "description": "Webpack configuration for CodyFrame",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "author": "Amber Creative Lab <info@ambercreative.co>",
+  "license": "MIT",
+  "homepage": "https://codyhouse.co",
+  "devDependencies": {
+    "autoprefixer": "^9.7.1",
+    "codyhouse-framework": "^2.1.12",
+    "css-loader": "^3.2.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.2.0",
+    "node-sass": "^4.13.0",
+    "node-sass-glob-importer": "^5.3.2",
+    "postcss-calc": "^7.0.1",
+    "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge-and-include-globally": "^2.1.20"
+  }
+}

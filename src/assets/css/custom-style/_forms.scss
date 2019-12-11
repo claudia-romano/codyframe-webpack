@@ -1,0 +1,52 @@
+// --------------------------------
+
+// (START) Global Editor code https://codyhouse.co/ds/globals/forms
+
+// --------------------------------
+
+:root {
+  --form-control-padding-x: var(--space-sm);
+  --form-control-padding-y: var(--space-xs);
+  --form-control-radius: 0.25em;
+}
+
+.form-control { // basic form element style
+  border: 2px solid var(--color-contrast-low);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px alpha(var(--color-primary), 0.2)
+  }
+}
+
+.form-control[aria-invalid="true"] {
+  border-color: var(--color-error);
+
+  &:focus {
+    box-shadow: 0 0 0 3px alpha(var(--color-error), 0.2);
+  }
+}
+
+.form-control[disabled], .form-control[readonly] {
+  cursor: not-allowed;
+}
+
+.form-legend {}
+
+.form-label {
+  font-size: var(--text-sm);
+}
+
+// --------------------------------
+
+// (END) Global Editor Code
+
+// --------------------------------
+
+.form-error-msg {
+  background-color: alpha(var(--color-error), 0.2);
+  color: inherit;
+  border-radius: var(--radius-md);
+  padding: var(--space-xs);
+}
