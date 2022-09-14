@@ -1,9 +1,8 @@
 const path = require('path');
-const globImporter = require('node-sass-glob-importer');
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 
 module.exports = { 
-  entry: ['./src/index.js', './src/style.scss', './src/style-fallback.scss'],
+  entry: ['./src/index.js', './src/style.scss'],
   devServer: {
     contentBase: './dist',
   },
@@ -32,26 +31,24 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               plugins: function (loader) {
-                return loader.resourcePath.indexOf('style.') > -1
-                  ? [
-                    require('autoprefixer')
-                  ]
-                  : [
-                    require('autoprefixer'),
-                    require('postcss-css-variables'),
-                    require('postcss-calc')
-                  ];
+                return require('autoprefixer');
               }
             }
           }, {
             loader: 'sass-loader',
             options: {
-              sassOptions: {
-                importer: globImporter()
-              }
+              implementation: require("sass")
             }
           }
         ],
+      }, 
+      {
+        test: /\.s[ac]ss$/i,
+        enforce: "pre",
+        loader: 'import-glob-loader',
+        options: {
+          test: 'use'
+        }
       }
     ]
   },
